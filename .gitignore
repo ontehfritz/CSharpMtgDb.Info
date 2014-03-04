@@ -1,0 +1,7 @@
+obj
+bin
+properties
+packages.config
+.DS_Store
+packages
+test-results
