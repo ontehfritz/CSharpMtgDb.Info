@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpMtgDb.Info", "CSharpMtgDb.Info.csproj", "{6472D94B-3091-4990-B1AE-65B29769A873}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtgDb.Info.Driver", "MtgDb.Info.Driver.csproj", "{6472D94B-3091-4990-B1AE-65B29769A873}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_CSharpMtgDb.info", "Test_CSharpMtgDb.info\Test_CSharpMtgDb.info.csproj", "{5CA8D0D6-91B4-497E-9965-69CE32A83972}"
 EndProject
@@ -21,6 +21,6 @@ Global
 		{6472D94B-3091-4990-B1AE-65B29769A873}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = CSharpMtgDb.Info.csproj
+		StartupItem = MtgDb.Info.Driver.csproj
 	EndGlobalSection
 EndGlobal

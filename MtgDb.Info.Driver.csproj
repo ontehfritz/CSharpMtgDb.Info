@@ -8,7 +8,7 @@
     <ProjectGuid>{6472D94B-3091-4990-B1AE-65B29769A873}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>MtgDb.Info</RootNamespace>
-    <AssemblyName>CSharpMtgDb.Info</AssemblyName>
+    <AssemblyName>MtgDb.Info.Driver</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,6 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>

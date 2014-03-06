@@ -37,9 +37,9 @@
     <Compile Include="TestDb.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSharpMtgDb.Info.csproj">
+    <ProjectReference Include="..\MtgDb.Info.Driver.csproj">
       <Project>{6472D94B-3091-4990-B1AE-65B29769A873}</Project>
-      <Name>CSharpMtgDb.Info</Name>
+      <Name>MtgDb.Info.Driver</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
