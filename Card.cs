@@ -9,6 +9,9 @@ namespace MtgDb.Info
         [DataMember(Name = "id")]
         public int Id { get; set; }
 
+        [DataMember(Name = "relatedCardId")]
+        public int RelatedCardId { get; set; }
+
         [DataMember(Name = "setNumber")]
         public int SetNumber { get; set; }
 
