@@ -39,13 +39,18 @@ namespace MtgDb.Info.Test.CSharp
         [Test()]
         public void Test_get_cards_by_name_no_match ()
         {
-            Card [] cards = mtginfo.GetCards ("");
-           
-            Assert.IsNull (cards);
+            Card [] cards = null;
+
+            try
+            {
+                cards = mtginfo.GetCards ("");
+            }
+            catch(Exception e)
+            {
+                Assert.IsNull (cards);
+            }
         }
-
-
-
+            
         [Test()]
         public void Test_get_cards_by_multiverseIds ()
         {
