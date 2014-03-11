@@ -78,7 +78,7 @@ namespace MtgDb.Info
         public Ruling[] Rulings { get; set; }
 
         [DataMember(Name ="formats")]
-        public string [] Formats { get; set; }
+        public Format [] Formats { get; set; }
 
         [DataMember(Name = "releasedAt")]
         public DateTime ReleasedAt { get; set; }
@@ -91,6 +91,15 @@ namespace MtgDb.Info
         public DateTime ReleasedAt { get; set; }
         [DataMember(Name = "rule")]
         public string Rule { get; set; }
+    }
+
+    [DataContract]
+    public class Format 
+    {
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
+        [DataMember(Name = "legality")]
+        public string Legality { get; set; }
     }
 }
 
