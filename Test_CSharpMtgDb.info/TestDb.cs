@@ -21,6 +21,22 @@ namespace MtgDb.Info.Test.CSharp
         }
 
         [Test()]
+        public void Test_get_random_card ()
+        {
+            Card card = mtginfo.GetRandomCard ();
+            System.Console.WriteLine (card.Id.ToString());
+            Assert.IsNotNull (card);
+        }
+
+        [Test()]
+        public void Test_get_random_card_in_set ()
+        {
+            Card card = mtginfo.GetRandomCardInSet ("lea");
+            System.Console.WriteLine (card.ReleasedAt.ToLongDateString ());
+            Assert.IsNotNull (card);
+        }
+            
+        [Test()]
         public void Test_get_card ()
         {
             Card card = mtginfo.GetCard (14456);

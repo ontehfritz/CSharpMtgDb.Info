@@ -40,7 +40,39 @@ namespace MtgDb.Info.Driver
             {
                 string url = string.Format ("{0}/cards/{1}", this.ApiUrl, id.ToString());
                 var json = client.DownloadString(url);
-                //var serializer = new JavaScriptSerializer();
+                Card card = JsonConvert.DeserializeObject<Card>(json);
+
+                return card;
+            }
+        }
+
+        /// <summary>
+        /// Gets the random card.
+        /// </summary>
+        /// <returns>The random card.</returns>
+        public Card GetRandomCard()
+        {
+            using (var client = new WebClient())
+            {
+                string url = string.Format ("{0}/cards/random", this.ApiUrl);
+                var json = client.DownloadString(url);
+                Card card = JsonConvert.DeserializeObject<Card>(json);
+
+                return card;
+            }
+        }
+
+        /// <summary>
+        /// Gets the random card in set.
+        /// </summary>
+        /// <returns>The random card in set.</returns>
+        /// <param name="setId">Set identifier.</param>
+        public Card GetRandomCardInSet(string setId)
+        {
+            using (var client = new WebClient())
+            {
+                string url = string.Format ("{0}/sets/{1}/cards/random", this.ApiUrl,setId);
+                var json = client.DownloadString(url);
                 Card card = JsonConvert.DeserializeObject<Card>(json);
 
                 return card;

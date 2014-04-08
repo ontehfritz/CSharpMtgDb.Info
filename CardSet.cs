@@ -41,6 +41,9 @@ namespace MtgDb.Info
         [DataMember(Name = "basicLand")]
         public int BasicLand { get; set; }
 
+        [DataMember(Name = "total")]
+        public int Total { get; set; }
+
         [DataMember(Name = "releasedAt")]
         public DateTime ReleasedAt { get; set; }
 
