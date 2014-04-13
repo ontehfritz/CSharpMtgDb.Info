@@ -235,6 +235,20 @@ namespace MtgDb.Info.Driver
             }
         }
 
+        public Card GetCardInSet(string setId, int setNumber)
+        {
+            using (var client = new WebClient())
+            {
+                string url = string.Format ("{0}/sets/{1}/cards/{2}", this.ApiUrl, 
+                    setId, setNumber.ToString());
+
+                var json = client.DownloadString(url);
+                Card card = JsonConvert.DeserializeObject<Card>(json);
+
+                return card;
+            }
+        }
+
         /// <summary>
         /// Gets the set.
         /// </summary>

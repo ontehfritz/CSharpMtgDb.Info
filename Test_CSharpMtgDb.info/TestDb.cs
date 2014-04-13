@@ -94,6 +94,23 @@ namespace MtgDb.Info.Test.CSharp
         }
 
         [Test()]
+        public void Test_get_card_in_set ()
+        {
+            Card card = mtginfo.GetCardInSet("10E",1);
+
+            System.Console.WriteLine (card.CardSetId);
+            Assert.AreEqual(1, card.SetNumber);
+            Assert.AreEqual("10E", card.CardSetId);
+        }
+
+        [Test()]
+        public void Test_get_card_in_set_not_found ()
+        {
+            Card card = mtginfo.GetCardInSet("10E",1000);
+            Assert.IsNull(card);
+        }
+            
+        [Test()]
         public void Test_get_set_cards ()
         {
             Card[] cards = mtginfo.GetSetCards ("10E");
