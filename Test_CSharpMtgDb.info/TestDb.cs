@@ -13,6 +13,15 @@ namespace MtgDb.Info.Test.CSharp
         //Db mtginfo = new Db();
 
         [Test()]
+        public void Test_search_complex ()
+        {
+            Card [] cards = mtginfo.Search ("color eq blue and type m 'Creature' and description m 'flying' " +
+                "and convertedmanacost lt 3 and name m 'Cloud'", true);
+            System.Console.WriteLine (cards.Length.ToString());
+            Assert.GreaterOrEqual (cards.Length,1);
+        }
+            
+        [Test()]
         public void Test_search_cards ()
         {
             Card [] cards = mtginfo.Search ("giant");
