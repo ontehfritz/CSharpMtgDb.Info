@@ -16,7 +16,7 @@ namespace MtgDb.Info.Test.CSharp
         public void Test_search_complex ()
         {
             Card [] cards = mtginfo.Search ("color eq blue and type m 'Creature' and description m 'flying' " +
-                "and convertedmanacost lt 3 and name m 'Cloud'", true);
+                "and convertedmanacost lt 3 and name m 'Cloud'", isComplex: true);
             System.Console.WriteLine (cards.Length.ToString());
             Assert.GreaterOrEqual (cards.Length,1);
         }

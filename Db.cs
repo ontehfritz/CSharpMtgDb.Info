@@ -289,14 +289,14 @@ namespace MtgDb.Info.Driver
         /// It will strip out all characters that are not alpha-numeric.
         /// </summary>
         /// <param name="text">An array of Card objects</param>
-        public Card[] Search(string text, bool isComplex = false)
+        public Card[] Search(string text, int start = 0, int limit = 0, bool isComplex = false)
         {
             using (var client = new WebClient())
             {
                 if(isComplex)
                 {
-                    string url = string.Format ("{0}/search/?q={1}", 
-                            this.ApiUrl, Uri.EscapeDataString(text));
+                    string url = string.Format ("{0}/search/?q={1}&start={2}&limit={3}", 
+                        this.ApiUrl, Uri.EscapeDataString(text),start,limit);
                     var json = client.DownloadString(url);
 
                     Card[] cards = JsonConvert.DeserializeObject<Card[]>(json);
@@ -306,7 +306,8 @@ namespace MtgDb.Info.Driver
                 {
                     Regex rgx = new Regex("[^a-zA-Z0-9 -]");
                     text = rgx.Replace(text, "");
-                    string url = string.Format ("{0}/search/{1}", this.ApiUrl, text);
+                    string url = string.Format ("{0}/search/{1}?start={2}&limit={3}", 
+                        this.ApiUrl, text, start, limit);
                     var json = client.DownloadString(url);
 
                     Card[] cards = JsonConvert.DeserializeObject<Card[]>(json);
