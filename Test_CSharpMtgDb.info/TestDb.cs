@@ -13,6 +13,20 @@ namespace MtgDb.Info.Test.CSharp
         //Db mtginfo = new Db();
 
         [Test()]
+        public void Test_get_card_types ()
+        {
+            string [] types = mtginfo.GetCardTypes();
+            Assert.Greater(types.Length, 0);
+        }
+
+        [Test()]
+        public void Test_get_card_subtypes ()
+        {
+            string [] types = mtginfo.GetCardSubTypes();
+            Assert.Greater(types.Length, 0);
+        }
+
+        [Test()]
         public void Test_search_complex ()
         {
             Card [] cards = mtginfo.Search ("color eq blue and type m 'Creature' and description m 'flying' " +

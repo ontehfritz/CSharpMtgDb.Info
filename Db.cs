@@ -29,6 +29,31 @@ namespace MtgDb.Info.Driver
             ApiUrl = url;
         }
 
+        public string[] GetCardTypes()
+        {
+            using (var client = new WebClient())
+            {
+                string url = string.Format ("{0}/cards/types", this.ApiUrl);
+                var json = client.DownloadString(url);
+                string [] types = JsonConvert.DeserializeObject<string[]>(json);
+
+                return types;
+            }
+
+        }
+
+        public string[] GetCardSubTypes()
+        {
+            using (var client = new WebClient())
+            {
+                string url = string.Format ("{0}/cards/subtypes", this.ApiUrl);
+                var json = client.DownloadString(url);
+                string [] types = JsonConvert.DeserializeObject<string[]>(json);
+
+                return types;
+            }
+        }
+            
         /// <summary>
         /// Get a card by multiverse Id
         /// </summary>
