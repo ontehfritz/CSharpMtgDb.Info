@@ -13,6 +13,13 @@ namespace MtgDb.Info.Test.CSharp
         //Db mtginfo = new Db();
 
         [Test()]
+        public void Test_get_card_rarity_types ()
+        {
+            string [] types = mtginfo.GetCardRarityTypes();
+            Assert.Greater(types.Length, 0);
+        }
+
+        [Test()]
         public void Test_get_card_types ()
         {
             string [] types = mtginfo.GetCardTypes();

@@ -29,6 +29,18 @@ namespace MtgDb.Info.Driver
             ApiUrl = url;
         }
 
+        public string[] GetCardRarityTypes()
+        {
+            using (var client = new WebClient())
+            {
+                string url = string.Format ("{0}/cards/rarity", this.ApiUrl);
+                var json = client.DownloadString(url);
+                string [] types = JsonConvert.DeserializeObject<string[]>(json);
+
+                return types;
+            }
+        }
+
         public string[] GetCardTypes()
         {
             using (var client = new WebClient())
