@@ -37,7 +37,12 @@ namespace MtgDb.Info.Driver
                     string url;
                     if (OrderedArgs != null)
                     {
-                        url = string.Format(uriFormat, this.ApiUrl, OrderedArgs);
+                        // Prepend ApiUrl to OrderedArgs array so the url string contains the values of OrderedArgs instead of the data type
+                        string[] args = new string[OrderedArgs.Length + 1];
+                        args[0] = this.ApiUrl;
+                        Array.Copy(OrderedArgs, 0, args, 1, OrderedArgs.Length);
+
+                        url = string.Format(uriFormat, args);
                     }
                     else
                     {
