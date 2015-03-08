@@ -204,7 +204,8 @@ namespace MtgDb.Info.Driver
             }
             else
             {
-                result = CallApi<Card[]>("{0}/sets/{1}/cards/?start={2}&end={3}", setId);
+                // Remove start and end parameters in order to fix FormatException that is thrown
+                result = CallApi<Card[]>("{0}/sets/{1}/cards", setId);
             }
 
             return result;
